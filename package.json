@@ -1,0 +1,26 @@
+{
+  "name": "eshop",
+  "version": "1.0.0",
+  "description": "backend of the eshop",
+  "homepage": "https://github.com/Agbajestephen/E-commerce-API#readme",
+  "bugs": {
+    "url": "https://github.com/Agbajestephen/E-commerce-API/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agbajestephen/E-commerce-API.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "nodemon": "^3.1.10"
+  }
+}
