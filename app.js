@@ -6,7 +6,6 @@ const mongoose = require("mongoose");
 
 require("dotenv/config");
 
-
 //middlewaree
 app.use(bodyParser.json());
 app.use(morgan("tiny"));
