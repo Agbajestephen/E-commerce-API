@@ -5,20 +5,28 @@ const morgan = require("morgan");
 const mongoose = require("mongoose");
 
 require("dotenv/config");
-const api = process.env.API_URL;
-const productRouter=require('./routers/products')
+
 
 //middlewaree
 app.use(bodyParser.json());
 app.use(morgan("tiny"));
 
-app.use(`${api}/products`, productRouter)
+//Routers
+const categoriesRoutes = require("./routers/categories");
+const productRouter = require("./routers/products");
+const usersRoutes = require("./routers/users");
+const ordersRoutes = require("./routers/orders");
 
+const api = process.env.API_URL;
 
-const Product = require('./models/product');
+app.use(`${api}/categories`, categoriesRouter);
+app.use(`${api}/products`, productRouter);
+app.use(`${api}/routers`, routersRouter);
+app.use(`${api}/orders`, ordersRouter);
 
-
-mongoose.connect(process.env.CONNECTION_STRING, {
+//Database
+mongoose
+  .connect(process.env.CONNECTION_STRING, {
     // useNewUrlParser : true,
     // useUnifiedTopology : true,
     dbName: "eshop-database",
@@ -30,6 +38,7 @@ mongoose.connect(process.env.CONNECTION_STRING, {
     console.log(err);
   });
 
+//server
 app.listen(3000, () => {
   console.log("server is running http://localhost:3000");
 });
