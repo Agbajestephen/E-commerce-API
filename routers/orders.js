@@ -6,7 +6,7 @@ router.get(`/`, async(req, res)=>{
     const orderList = await Order.find();
 
     if(!orderList){
-        res.send(500).json({success:false})
+        res.status(500).json({success:false})
     }
     res.send(orderList);
 })
