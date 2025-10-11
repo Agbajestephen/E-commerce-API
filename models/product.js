@@ -14,11 +14,7 @@ const productsSchema = mongoose.Schema({
     type: String,
     default: "",
   },
-  image: {
-    type: String,
-    default: "",
-  },
-  image: [
+  images: [
     {
       type: String,
     },
@@ -48,7 +44,7 @@ const productsSchema = mongoose.Schema({
     // min : 0,
     // max:255
   },
-  newReviews:{
+  numReviews:{
     type : Number,
     default : 0,
   },

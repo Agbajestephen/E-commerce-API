@@ -6,7 +6,7 @@ router.get(`/`, async(req, res)=>{
     const userList = await User.find();
 
     if(!userList){
-        res.status(500).json({success:false})
+        res.status(500).jsonsag({success:false})
     }
     res.send(userList);
 });
